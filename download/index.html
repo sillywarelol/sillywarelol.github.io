@@ -1,32 +1,17 @@
-<?php
-$file_path = 'statue-ware.exe';
-
-
-if (file_exists($file_path)) {
-
-    $random_name = generateRandomString(10); 
-
-
-    header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="'. $random_name .'"');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize($file_path));
-    readfile($file_path);
-    exit;
-} else {
-    echo "File not found.";
-}
-
-function generateRandomString($length = 10) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $characters_length = strlen($characters);
-    $random_string = '';
-    for ($i = 0; $i < $length; $i++) {
-        $random_string .= $characters[rand(0, $characters_length - 1)];
-    }
-    return $random_string;
-}
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>download</title>
+</head>
+<body>
+    <h1>Download Statue Ware</h1>
+    <p>Click the button below to download Statue Ware.</p>
+    <form action="statue-ware.exe">
+    
+        <button type="submit">Download</button>
+            <p>Note: Antivirus software might falsely flag statue-ware as a virus you may need to add a exclusion</p>
+    </form>
+</body>
+</html>
